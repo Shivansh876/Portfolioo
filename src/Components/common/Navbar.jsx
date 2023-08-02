@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { AiFillGithub, AiFillLinkedin, AiOutlineFileText, AiOutlineHome, AiOutlineLinkedin, AiOutlineUser } from "react-icons/ai"
 import { LiaLaptopCodeSolid } from "react-icons/lia"
-import { Link } from 'react-router-dom'
+import { Link, matchPath, useLocation } from 'react-router-dom'
+
 
 
 const Navbar = () => {
 
     const [isScrolled, setIsScrolled] = useState(false);
+    const location = useLocation();
+
+    const matchRoute = (route) => {
+        return matchPath({ path: route }, location.pathname);
+    }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -38,22 +44,22 @@ const Navbar = () => {
                 <nav>
                     <ul className='flex gap-x-10 flex-wrap'>
                         <li>
-                            <Link to={"/home"} className='flex items-center gap-1 cursor-pointer hover:border-b-[2px] hover:border-orange-5 '>
+                            <Link to={"/home"} className={`flex items-center gap-1 cursor-pointer hover:border-b-[2px] hover:border-orange-5 ${matchRoute("/home") ? "border-b-[3px] border-orange-5" : ""}`}>
                                 Home <AiOutlineHome size={18} />
                             </Link>
                         </li>
                         <li>
-                            <Link to={"/about"} className='flex items-center gap-1 cursor-pointer hover:border-b-[2px] hover:border-orange-5 '>
+                            <Link to={"/about"} className={`flex items-center gap-1 cursor-pointer hover:border-b-[2px] hover:border-orange-5 ${matchRoute("/about") ? "border-b-[3px] border-orange-5" : ""}`}>
                                 About <AiOutlineUser size={18} />
                             </Link>
                         </li>
                         <li>
-                            <Link to={"/projects"} className='flex items-center gap-1 cursor-pointer hover:border-b-[2px] hover:border-orange-5 '>
+                            <Link to={"/projects"} className={`flex items-center gap-1 cursor-pointer hover:border-b-[2px] hover:border-orange-5 ${matchRoute("/projects") ? "border-b-[3px] border-orange-5" : ""}`}>
                                 Projects <LiaLaptopCodeSolid size={20} />
                             </Link>
                         </li>
                         <li>
-                            <Link to={"/resume"} className='flex items-center gap-1 cursor-pointer hover:border-b-[2px] hover:border-orange-5 '>
+                            <Link to={"/resume"} className={`flex items-center gap-1 cursor-pointer hover:border-b-[2px] hover:border-orange-5 ${matchRoute("/resume") ? "border-b-[3px] border-orange-5" : ""}`}>
                                 Resume <AiOutlineFileText size={15} />
                             </Link>
                         </li>
