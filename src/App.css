@@ -1,0 +1,51 @@
+/* write your css here */
+
+.button-style {
+    background-color: #FF7518;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.cursorClass {
+    color: #FF7518;
+    animation: blink 1s infinite;
+}
+
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.codeblock1, .codeblock2{
+    border-radius: 100%;
+    -webkit-filter: blur(34px);
+    filter: blur(34px);
+    height: 257.05px;
+    left: calc(50% - 263.005px);
+    opacity: .2;
+    top: calc(50% - 175.995px);
+    -webkit-transform: matrix(1,0,-.03,1,0,0);
+    transform: matrix(1,0,-.03,1,0,0);
+    width: 372.95px;
+}
+
+.codeblock1 {
+    background: linear-gradient(123.77deg,#8a2be2 -6.46%,orange 59.04%,#f8f8ff 124.53%);
+}
+
+.codeblock2 {
+    background: linear-gradient(139.88deg, orange -6.46%,rgb(188, 190, 170) 59.04%,#e8c98b 124.53%);
+}
